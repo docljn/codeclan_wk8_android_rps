@@ -15,7 +15,7 @@ public class PlayerTest {
 
     @Before
     public void before(){
-        player = new Player("Joe");
+        player = new Player();
     }
 
     @Test

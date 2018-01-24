@@ -7,10 +7,8 @@ package example.docljn.com.rockpaperscissors;
 class Player {
 
     private String hand;
-    private String name;
 
-    public Player(String name) {
-        this.name = name;
+    public Player() {
         this.hand = null;
     }
 

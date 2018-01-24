@@ -10,6 +10,7 @@ import java.util.Collections;
 class Game {
     private final ArrayList<String> choices;
     private String hand;
+    private Player player;
 
     public Game() {
         choices = new ArrayList<>();
@@ -17,6 +18,7 @@ class Game {
         choices.add("Paper");
         choices.add("Scissors");
         this.hand = null;
+        this.player = new Player();
     }
 
     public ArrayList<String> getChoices() {
@@ -29,6 +31,30 @@ class Game {
     }
 
     public String getHand() {
-        return hand;
+        return this.hand;
+    }
+
+    public String getResult() {
+        this.choose();
+        String playerChoice = player.getHand();
+        String computerChoice = this.getHand();
+        String result = playerChoice + computerChoice;
+
+        if (playerChoice == computerChoice) {
+            return "Draw";
+        } else if (result.equals("ScissorsPaper")) {
+            return "Player Wins";
+        } else if (result.equals("RockScissors")) {
+            return "Player Wins";
+        } else if (result.equals("PaperRock")) {
+            return "Player Wins";
+        } else {
+            return "Computer Wins";
+        }
+
+    }
+
+    public Player getPlayer() {
+        return this.player;
     }
 }

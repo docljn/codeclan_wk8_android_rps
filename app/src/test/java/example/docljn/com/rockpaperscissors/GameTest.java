@@ -1,6 +1,7 @@
 package example.docljn.com.rockpaperscissors;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -30,6 +31,33 @@ public class GameTest {
     public void canGetComputerChoice(){
         game.choose();
         assertNotNull(game.getHand());
+    }
+
+    @Test @Ignore
+    public void playerDrawsWithRock(){
+        Player player = game.getPlayer();
+        player.choose("Rock");
+        // because we are not shuffling, we know that we will get "Rock" back
+        game.choose();
+        assertEquals("Draw", game.getResult());
+    }
+
+    @Test @Ignore
+    public void playerWinsWithPaper(){
+        Player player = game.getPlayer();
+        player.choose("Paper");
+        // because we are not shuffling, we know that we will get "Rock" back
+        game.choose();
+        assertEquals("Player Wins", game.getResult());
+    }
+
+    @Test @Ignore
+    public void playerLosesWithScissors(){
+        Player player = game.getPlayer();
+        player.choose("Scissors");
+        // because we are not shuffling, we know that we will get "Rock" back
+        game.choose();
+        assertEquals("Computer Wins", game.getResult());
     }
 
 
