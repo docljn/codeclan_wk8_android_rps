@@ -43,6 +43,13 @@ public class GameActivity extends AppCompatActivity {
 
         TextView resultText = findViewById(R.id.result_text);
         resultText.setText(result);
+
+        TextView playerScore = findViewById(R.id.player_score);
+        playerScore.setText("Player: " + game.getPlayerScore());
+
+        TextView computerScore = findViewById(R.id.computer_score);
+        computerScore.setText("Computer: " + game.getComputerScore());
+
     }
 
 
