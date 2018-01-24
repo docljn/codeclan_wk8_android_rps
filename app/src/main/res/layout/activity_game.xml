@@ -6,13 +6,64 @@
     android:layout_height="match_parent"
     tools:context="example.docljn.com.rockpaperscissors.GameActivity">
 
+    <ImageButton
+        android:id="@+id/rockButton"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="8dp"
+        android:contentDescription="@string/rock"
+        app:layout_constraintEnd_toStartOf="@+id/paperButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/paperButton"
+        app:srcCompat="@drawable/rock"
+        android:scaleType="fitXY"/>
+
+    <ImageButton
+        android:id="@+id/paperButton"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/paper"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75"
+        app:srcCompat="@drawable/paper"
+        android:scaleType="fitXY"/>
+
+    <ImageButton
+        android:id="@+id/scissorsButton"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="32dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/scissors"
+        android:cropToPadding="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/paperButton"
+        app:layout_constraintTop_toTopOf="@+id/paperButton"
+        app:srcCompat="@drawable/scissors"
+        android:scaleType="fitXY"/>
+
     <TextView
+        android:id="@+id/text_view_rps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/choose"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.157" />
 </android.support.constraint.ConstraintLayout>
