@@ -14,11 +14,12 @@
         android:layout_marginEnd="32dp"
         android:layout_marginStart="8dp"
         android:contentDescription="@string/rock"
+        android:onClick="onRockButtonClicked"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toStartOf="@+id/paperButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/paperButton"
-        app:srcCompat="@drawable/rock"
-        android:scaleType="fitXY"/>
+        app:srcCompat="@drawable/rock" />
 
     <ImageButton
         android:id="@+id/paperButton"
@@ -61,9 +62,42 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/choose"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.157" />
+        app:layout_constraintVertical_bias="0.552" />
+
+    <TextView
+        android:id="@+id/player_choice_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="163dp"
+        android:layout_marginStart="163dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/textview"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_rps"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.039" />
+
+    <TextView
+        android:id="@+id/computer_choice_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textview"
+        app:layout_constraintEnd_toEndOf="@+id/player_choice_text"
+        app:layout_constraintStart_toStartOf="@+id/player_choice_text"
+        app:layout_constraintTop_toBottomOf="@+id/player_choice_text" />
+
+    <TextView
+        android:id="@+id/result_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textview"
+        app:layout_constraintEnd_toEndOf="@+id/computer_choice_text"
+        app:layout_constraintStart_toStartOf="@+id/computer_choice_text"
+        app:layout_constraintTop_toBottomOf="@+id/computer_choice_text" />
 </android.support.constraint.ConstraintLayout>
