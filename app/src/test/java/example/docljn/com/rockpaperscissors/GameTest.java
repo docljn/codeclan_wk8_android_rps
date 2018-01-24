@@ -28,37 +28,39 @@ public class GameTest {
     }
 
     @Test
-    public void canGetComputerChoice(){
-        game.choose();
-        assertNotNull(game.getHand());
+    public void canGetComputerHand(){
+        game.setComputerHand("Rock");
+        assertEquals("Rock", game.getComputerHand());
     }
 
-    @Test @Ignore
-    public void playerDrawsWithRock(){
-        Player player = game.getPlayer();
-        player.choose("Rock");
-        // because we are not shuffling, we know that we will get "Rock" back
-        game.choose();
+    @Test
+    public void drawWithTwoTheSame(){
+        game.setPlayerHand("Rock");
+        game.setComputerHand("Rock");
         assertEquals("Draw", game.getResult());
     }
 
-    @Test @Ignore
-    public void playerWinsWithPaper(){
-        Player player = game.getPlayer();
-        player.choose("Paper");
-        // because we are not shuffling, we know that we will get "Rock" back
-        game.choose();
+    @Test
+    public void playerWinsWithPaperAgainstRock(){
+        game.setPlayerHand("Paper");
+        game.setComputerHand("Rock");
         assertEquals("Player Wins", game.getResult());
     }
 
-    @Test @Ignore
-    public void playerLosesWithScissors(){
-        Player player = game.getPlayer();
-        player.choose("Scissors");
-        // because we are not shuffling, we know that we will get "Rock" back
-        game.choose();
+    @Test
+    public void playerLosesWithScissorsAgainstRock(){
+        game.setPlayerHand("Scissors");
+        game.setComputerHand("Rock");
         assertEquals("Computer Wins", game.getResult());
     }
+
+    @Test
+    public void playerLosesWithPaperAgainstScissors(){
+        game.setPlayerHand("Paper");
+        game.setComputerHand("Scissors");
+        assertEquals("Computer Wins", game.getResult());
+    }
+
 
     @Test
     public void gameStartsWithZeroScores(){
@@ -68,8 +70,27 @@ public class GameTest {
 
     @Test
     public void winIncreasesScore(){
-        
+        game.setPlayerHand("Paper");
+        game.setComputerHand("Scissors");
+        game.getResult();
+        assertEquals(1, game.getComputerScore());
     }
+
+    @Test
+    public void drawIncrementsBothScores(){
+        game.setPlayerHand("Paper");
+        game.setComputerHand("Paper");
+        game.getResult();
+        assertEquals(1, game.getComputerScore());
+        assertEquals(1, game.getPlayerScore());
+    }
+
+    @Test
+    public void playGameGeneratesResult(){
+        assertNotNull(game.play("Rock"));
+    }
+
+
 
 
 }

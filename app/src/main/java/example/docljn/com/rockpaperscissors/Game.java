@@ -54,27 +54,45 @@ class Game {
         return this.computerScore;
     }
 
+    public String getRandomChoice(){
+        Collections.shuffle(choices);
+        return choices.get(0);
+    }
+
 
 
     public String getResult() {
-        Collections.shuffle(choices);
-        this.setComputerHand(choices.get(0));
 
         String result = playerHand + computerHand;
 
-        if (playerHand == computerHand) {
+        if (playerHand.equals(computerHand)) {
+            this.playerScore += 1;
+            this.computerScore += 1;
             return "Draw";
         } else if (result.equals("ScissorsPaper")) {
+            this.playerScore += 1;
             return "Player Wins";
         } else if (result.equals("RockScissors")) {
+            this.playerScore += 1;
             return "Player Wins";
         } else if (result.equals("PaperRock")) {
+            this.playerScore += 1;
             return "Player Wins";
         } else {
+            this.computerScore += 1;
             return "Computer Wins";
         }
     }
 
 
-
+    public String play(String playerChoice) {
+        this.setPlayerHand(playerChoice);
+        this.setComputerHand(this.getRandomChoice());
+        return this.getResult();
+    }
 }
+
+
+
+//        this.setComputerHand(this.getRandomChoice());
+
