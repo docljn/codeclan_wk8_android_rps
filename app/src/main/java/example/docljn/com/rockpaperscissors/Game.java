@@ -9,20 +9,26 @@ import java.util.Collections;
 
 class Game {
     private final ArrayList<String> choices;
+    private String hand;
 
     public Game() {
         choices = new ArrayList<>();
         choices.add("Rock");
         choices.add("Paper");
         choices.add("Scissors");
+        this.hand = null;
     }
 
     public ArrayList<String> getChoices() {
         return this.choices;
     }
 
-    public String choose() {
+    public void choose() {
         Collections.shuffle(choices);
-        return choices.get(0);
+        this.hand = choices.get(0);
+    }
+
+    public String getHand() {
+        return hand;
     }
 }

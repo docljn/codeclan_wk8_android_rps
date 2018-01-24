@@ -28,9 +28,9 @@ public class GameTest {
 
     @Test
     public void canGetComputerChoice(){
-        assertNotNull(game.choose());
+        game.choose();
+        assertNotNull(game.getHand());
     }
 
-    // TODO: should the game have a 'hand' as well, so we can reference it when calculating the winner?
 
 }
