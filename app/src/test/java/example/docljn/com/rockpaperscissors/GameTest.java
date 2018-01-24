@@ -31,4 +31,6 @@ public class GameTest {
         assertNotNull(game.choose());
     }
 
+    // TODO: should the game have a 'hand' as well, so we can reference it when calculating the winner?
+
 }

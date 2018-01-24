@@ -23,9 +23,6 @@ class Game {
 
     public String choose() {
         Collections.shuffle(choices);
-        System.out.println(choices);
         return choices.get(0);
-
-
     }
 }
