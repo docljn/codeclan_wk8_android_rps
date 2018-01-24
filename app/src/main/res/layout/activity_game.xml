@@ -30,13 +30,14 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/paper"
+        android:onClick="onPaperButtonClicked"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.75"
-        app:srcCompat="@drawable/paper"
-        android:scaleType="fitXY"/>
+        app:srcCompat="@drawable/paper" />
 
     <ImageButton
         android:id="@+id/scissorsButton"
@@ -47,11 +48,12 @@
         android:adjustViewBounds="true"
         android:contentDescription="@string/scissors"
         android:cropToPadding="false"
+        android:onClick="onScissorsButtonClicked"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/paperButton"
         app:layout_constraintTop_toTopOf="@+id/paperButton"
-        app:srcCompat="@drawable/scissors"
-        android:scaleType="fitXY"/>
+        app:srcCompat="@drawable/scissors" />
 
     <TextView
         android:id="@+id/text_view_rps"
