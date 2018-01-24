@@ -11,6 +11,8 @@ class Game {
     private final ArrayList<String> choices;
     private String hand;
     private Player player;
+    private int playerScore;
+    private int computerScore;
 
     public Game() {
         choices = new ArrayList<>();
@@ -56,5 +58,13 @@ class Game {
 
     public Player getPlayer() {
         return this.player;
+    }
+
+    public int getPlayerScore() {
+        return this.playerScore;
+    }
+
+    public int getComputerScore() {
+        return this.computerScore;
     }
 }

@@ -60,5 +60,16 @@ public class GameTest {
         assertEquals("Computer Wins", game.getResult());
     }
 
+    @Test
+    public void gameStartsWithZeroScores(){
+        assertEquals(0, game.getPlayerScore());
+        assertEquals(0, game.getComputerScore());
+    }
+
+    @Test
+    public void winIncreasesScore(){
+        
+    }
+
 
 }
